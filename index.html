@@ -78,6 +78,8 @@
     </div>
   </div>
 
+  <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+  </div>
   <!-- Messenger Plugin chat Code -->
   <div id="fb-root"></div>
 
@@ -90,16 +92,18 @@
   <script>
     window.fbAsyncInit = function () {
       FB.init({
+        appId: '1192617212271254',
         xfbml: true,
-        version: 'v18.0'
+        version: 'v22.0'
       });
+      FB.AppEvents.logPageView();
     };
 
     (function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
+      if (d.getElementById(id)) { return; }
       js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>
