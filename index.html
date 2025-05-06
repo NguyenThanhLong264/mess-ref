@@ -91,7 +91,8 @@
   <script>
     window.addEventListener('DOMContentLoaded', function () {
       const chatLink = document.getElementById('messenger-chat-link');
-      const currentUrl = encodeURIComponent(window.location.href);
+      const currentUrl = window.location.href;
+      <!-- const currentUrl = encodeURIComponent(window.location.href); -->
       const link_me_ID = 'm.me/691357270718239';
       chatLink.href = `https://${link_me_ID}?ref=${currentUrl}`;
     });
