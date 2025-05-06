@@ -78,35 +78,14 @@
     </div>
   </div>
 
-  <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
-  </div>
-  <!-- Messenger Plugin chat Code -->
-  <div id="fb-root"></div>
+  <a href="https://m.me/691357270718239?ref=demoPage&text=Welcom customer" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; 
+  width: 60px; height: 60px; background-color: #008080; 
+  border-radius: 50%; display: flex; justify-content: center; 
+  align-items: center; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger Chat"
+      width="30" height="30" />
+  </a>
 
-  <!-- Your Chat Plugin code -->
-  <div class="fb-customerchat" attribution="setup_tool" page_id="691357270718239" theme_color="#e67e22"
-    logged_in_greeting="Xin chào! Tôi có thể giúp gì cho bạn?"
-    logged_out_greeting="Xin chào! Vui lòng đăng nhập Messenger để trò chuyện.">
-  </div>
-
-  <script>
-    window.fbAsyncInit = function () {
-      FB.init({
-        appId: '1192617212271254',
-        xfbml: true,
-        version: 'v22.0'
-      });
-      FB.AppEvents.logPageView();
-    };
-
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { return; }
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
 </body>
 
 </html>
