@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hướng dẫn tạo link chat Messenger</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fc;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #0084ff;
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 30px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    code {
+      background-color: #f1f1f1;
+      padding: 4px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    pre {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    a.demo-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: #0084ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    a.demo-button:hover {
+      background-color: #006edc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Hướng dẫn tạo link chat Messenger có kèm ref</h1>
+
+    <h2>🎯 Mục tiêu</h2>
+    <p>Tạo link chuyển sang cửa sổ trò chuyện Messenger và <strong>gửi kèm tham số ref là URL hiện tại</strong> để theo
+      dõi nguồn gốc người dùng.</p>
+
+    <h2>⚙️ Cách làm</h2>
+    <p>Chúng ta sẽ dùng trực tiếp link Messenger theo định dạng:</p>
+    <code>https://m.me/username?ref=tham-so</code>
+
+    <h2>📌 Các bước thực hiện</h2>
+
+    <h3>🔹 Bước 1: Tạo Fanpage và lấy link m.me</h3>
+    <p>Vào phần giới thiệu fanpage để lấy <strong>username</strong>. Link dạng:</p>
+    <code>https://m.me/yourpage</code>
+
+    <h3>🔹 Bước 2: Tạo đoạn HTML để chèn vào website</h3>
+    <p>Dùng đoạn mã sau:</p>
+    <pre><code>&lt;a href="https://m.me/yourpage?ref=" + encodeURIComponent(window.location.href) target="_blank"&gt;
+  Nhắn tin qua Messenger
+&lt;/a&gt;</code></pre>
+
+    <p>Hoặc dùng thẻ `script` để tạo tự động:</p>
+    <pre><code>&lt;script&gt;
+  const currentUrl = encodeURIComponent(window.location.href);
+  const chatLink = "https://m.me/yourpage?ref=" + currentUrl;
+  document.write('&lt;a href="' + chatLink + '" target="_blank"&gt;Chat qua Messenger&lt;/a&gt;');
+&lt;/script&gt;</code></pre>
+
+    <h3>🔹 Bước 3: Gắn tham số theo dõi (ref)</h3>
+    <p>Phần `ref` sẽ nhận URL hiện tại để bạn biết người dùng đến từ trang nào.</p>
+    <p>Ví dụ nếu người dùng đang ở:</p>
+    <code>https://example.com/blog/123</code>
+    <p>Thì link chat tạo ra sẽ là:</p>
+    <code>https://m.me/yourpage?ref=https%3A%2F%2Fexample.com%2Fblog%2F123</code>
+
+    <a href="https://m.me/yourpage?ref=https%3A%2F%2Fexample.com" target="_blank" class="demo-button">Dùng thử link
+      mẫu</a>
+  </div>
+</body>
+
+</html>
