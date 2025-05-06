@@ -78,13 +78,23 @@
     </div>
   </div>
 
-  <a href="https://m.me/691357270718239?ref=demoPage&text=Welcom customer" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; 
+  <a id="messenger-chat-link" href="#" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; 
   width: 60px; height: 60px; background-color: #008080; 
   border-radius: 50%; display: flex; justify-content: center; 
   align-items: center; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger Chat"
       width="30" height="30" />
   </a>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const chatLink = document.getElementById('messenger-chat-link');
+      const currentUrl = encodeURIComponent(window.location.href);
+      const pageId = '691357270718239';
+      chatLink.href = `https://m.me/${pageId}?ref=${currentUrl}`;
+    });
+  </script>
+
 
 </body>
 
