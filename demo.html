@@ -108,13 +108,30 @@
   <script>
     window.addEventListener('DOMContentLoaded', function () {
       const chatLink = document.getElementById('messenger-chat-link');
-      <!-- const currentUrl = window.location.href; -->
-      const currentUrl = encodeURIComponent(window.location.href);
-      const text = encodeURIComponent("Xin chào bạn")
-      const link_me_ID = 'm.me/597543350116055';
-      chatLink.href = `https://${link_me_ID}?ref=${currentUrl}`;
+
+      const fullUrl = new URL(window.location.href);
+      const baseUrl = fullUrl.origin + fullUrl.pathname;
+
+      const params = new URLSearchParams(fullUrl.search);
+      const filteredParams = new URLSearchParams();
+
+      for (const [key, value] of params.entries()) {
+        if (key.includes('source') || key.includes('campaign')) {
+          filteredParams.append(key, value);
+        }
+      }
+
+      const filteredUrl = filteredParams.toString()
+        ? `${baseUrl}?${filteredParams.toString()}`
+        : baseUrl;
+
+      const encodedRef = encodeURIComponent(filteredUrl);
+      const link_me_ID = '597543350116055';
+
+      chatLink.href = `https://m.me/${link_me_ID}?ref=${encodedRef}`;
     });
   </script>
+
   <!-- m.me/597543350116055 -->
   <!-- m.me/691357270718239 -->
 </body>
