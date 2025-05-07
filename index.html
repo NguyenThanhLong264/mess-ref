@@ -2,103 +2,151 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Danh sách công thức nấu ăn</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hướng dẫn tạo link chat Messenger</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #fffbe6;
+      background-color: #f7f9fc;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
+      color: #0084ff;
       text-align: center;
-      color: #e67e22;
     }
 
-    .recipe-list {
+    h2 {
+      color: #333;
+      margin-top: 30px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    code {
+      background-color: #f1f1f1;
+      padding: 4px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    pre {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    a.demo-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: #0084ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    a.demo-button:hover {
+      background-color: #006edc;
+    }
+
+    img {
+      width: 100%;
       max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .recipe {
-      background-color: #ffffff;
-      padding: 16px;
-      margin-bottom: 12px;
-      border-left: 6px solid #e67e22;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .recipe h2 {
-      margin-top: 0;
-      color: #2c3e50;
-    }
-
-    .recipe ul {
-      padding-left: 20px;
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
+    <h1>Hướng dẫn tạo link chat Messenger có kèm ref</h1>
 
-  <h1>🍽️ Danh sách công thức nấu ăn</h1>
+    <h2>🎯 Mục tiêu</h2>
+    <p>Tạo link chuyển sang cửa sổ trò chuyện Messenger và <strong>gửi kèm tham số ref là URL hiện tại</strong> để theo
+      dõi nguồn gốc người dùng.</p>
 
-  <div class="recipe-list">
-    <div class="recipe">
-      <h2>1. Canh chua cá</h2>
-      <p><strong>Nguyên liệu:</strong></p>
-      <ul>
-        <li>Cá basa hoặc cá lóc</li>
-        <li>Cà chua, thơm (dứa)</li>
-        <li>Me chua, rau om, ngò gai</li>
-      </ul>
-      <p><strong>Cách làm:</strong> Nấu nước me, thêm cá và rau củ, nêm nếm chua ngọt.</p>
-    </div>
+    <h2>⚙️ Cách làm</h2>
+    <p>Chúng ta sẽ dùng trực tiếp link Messenger theo định dạng:</p>
+    <code>https://m.me/username?ref=tham-so</code>
 
-    <div class="recipe">
-      <h2>2. Trứng chiên thịt băm</h2>
-      <p><strong>Nguyên liệu:</strong></p>
-      <ul>
-        <li>Trứng gà, thịt heo băm</li>
-        <li>Hành lá, tiêu, nước mắm</li>
-      </ul>
-      <p><strong>Cách làm:</strong> Trộn đều, đổ vào chảo, chiên chín vàng 2 mặt.</p>
-    </div>
+    <h2>📌 Các bước thực hiện</h2>
 
-    <div class="recipe">
-      <h2>3. Gỏi cuốn tôm thịt</h2>
-      <p><strong>Nguyên liệu:</strong></p>
-      <ul>
-        <li>Bánh tráng, bún, rau sống</li>
-        <li>Tôm luộc, thịt ba chỉ</li>
-      </ul>
-      <p><strong>Cách làm:</strong> Cuộn tất cả nguyên liệu, chấm với nước mắm chua ngọt.</p>
-    </div>
+    <h3>🔹 Bước 1: Tạo Fanpage và lấy link m.me</h3>
+    <p>Bạn có thể tạo link Messenger bằng một trong hai cách sau:</p>
+    <ul>
+      <li><strong>Dùng username:</strong> Vào phần "Giới thiệu" của fanpage để lấy <strong>username</strong>. Link có
+        dạng:<br />
+        <code>https://m.me/yourpage</code>
+      </li>
+      <li><strong>Dùng Page ID (messenger ID):</strong> Nếu fanpage không có username, bạn có thể dùng ID của fanpage.
+        Link có dạng:<br />
+        <code>https://m.me/123456789012345</code><br />
+        (thay <code>123456789012345</code> bằng ID thật của trang)
+      </li>
+    </ul>
+
+    <h3>🔹 Bước 2: Cài đặt Định tuyến cuộc trò chuyện trên Messenger</h3>
+    <p>Trong phần cài đặt của fanpage, vào <strong>Thiết lập trang</strong> → tìm <strong>Định tuyến cuộc trò chuyện
+        trên Messenger</strong> và chọn <strong>Ứng dụng định tuyến mặc định</strong>.</p>
+    <img src="img/s2.1.png" alt="Ứng dụng định tuyến mặc định">
+
+    <h3>🔹 Bước 3: Tạo nút chat và gắn ref theo URL</h3>
+    <p>Để sử dụng link <code>m.me</code>, bạn cần tạo một thẻ <code>&lt;a&gt;</code> có dạng:</p>
+    <pre><code>&lt;a href="https://m.me/{pageID hoặc username}"&gt;Nhắn tin qua Messenger&lt;/a&gt;</code></pre>
+
+    <p>Nếu muốn <strong>gửi kèm tham số ref là đường dẫn hiện tại</strong> (giúp theo dõi người dùng đến từ trang nào),
+      bạn có thể dùng ví dụ sau:</p>
+
+    <pre><code>&lt;a id="messenger-chat-link" href="#" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+  width: 60px; height: 60px; background-color: #008080;
+  border-radius: 50%; display: flex; justify-content: center;
+  align-items: center; box-shadow: 0 4px 8px rgba(0,0,0,0.3);"&gt;
+  &lt;img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg"
+       alt="Messenger Chat" width="30" height="30" /&gt;
+&lt;/a&gt;
+
+&lt;script&gt;
+  window.addEventListener('DOMContentLoaded', function () {
+    const chatLink = document.getElementById('messenger-chat-link');
+    const currentUrl = encodeURIComponent(window.location.href);
+    const pageID = '597543350116055'; // Thay bằng ID thật hoặc username
+    chatLink.href = `https://m.me/${pageID}?ref=${currentUrl}`;
+  });
+&lt;/script&gt;</code></pre>
+
+    <p>✅ Khi người dùng nhấn vào nút, họ sẽ được chuyển đến Messenger và bạn có thể biết họ đến từ trang nào nhờ tham số
+      <code>ref</code>.
+    </p>
+
+
+    <h2>📷 Ví dụ minh họa</h2>
+    <p>Dưới đây là ví dụ 1 trang hiển thị nút chat Messenger cố định góc dưới bên phải trang:</p>
+    <img src="img/vd1.png" alt="Ví dụ nút chat Messenger" />
+    <p>Tôi đã điền thêm các thông số như utm_source, utm_campaign trong đường dẫn:</p>
+    <img src="img/vd2.png" alt="Ví dụ nút chat Messenger" />
+    <p>Sau khi ấn vào link (trường hợp này là bong bóng chat như ảnh 1), thì sẽ được dẫn qua messenger chat với chỉ số
+      ref:</p>
+    <img src="img/vd3.png" alt="Ví dụ nút chat Messenger" />
+    <p>Sau khi người dùng ấn nút Bắt đầu thì ref sẽ được truyền vào</p>
+
+    <a href="demo.html" class="demo-button">Chuyển sang trang ví dụ</a>
+
   </div>
-
-  <!-- https://m.me/691357270718239?ref=https://nguyenthanhlong264.github.io/mess-ref/?utm_source=google?utm_campaign=cat -->
-  <a id="messenger-chat-link" href="#" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; 
-  width: 60px; height: 60px; background-color: #008080; 
-  border-radius: 50%; display: flex; justify-content: center; 
-  align-items: center; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger Chat"
-      width="30" height="30" />
-  </a>
-  <!-- m.me/597543350116055 -->
-  <!-- m.me/691357270718239 -->
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      const chatLink = document.getElementById('messenger-chat-link');
-      <!-- const currentUrl = window.location.href; -->
-      const currentUrl = encodeURIComponent(window.location.href);
-      const text = encodeURIComponent("Xin chào bạn")
-      const link_me_ID = 'm.me/597543350116055';
-      chatLink.href = `https://${link_me_ID}?ref=${currentUrl}`;
-    });
-  </script>
-
 </body>
 
 </html>
