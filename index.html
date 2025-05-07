@@ -94,47 +94,10 @@
       <!-- const currentUrl = window.location.href; -->
       const currentUrl = encodeURIComponent(window.location.href);
       const text = encodeURIComponent("Xin chào bạn")
-      const link_me_ID = 'm.me/atherine.test';
+      const link_me_ID = 'm.me/597543350116055';
       chatLink.href = `https://${link_me_ID}?ref=${currentUrl}`;
     });
   </script>
-
-  <script>
-    window.fbAsyncInit = function () {
-      FB.init({
-        appId: '1192617212271254', // ID ứng dụng của bạn
-        cookie: true,
-        xfbml: true,
-        version: 'v12.0'
-      });
-    };
-
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-
-
-  <div id="fb-root"></div>
-  <script>
-    window.fbAsyncInit = function () {
-      FB.init({
-        appId: '1192617212271254', // ID ứng dụng của bạn
-        cookie: true,
-        xfbml: true,
-        version: 'v12.0'
-      });
-
-      FB.Event.subscribe('xfbml.render', function () {
-        // Render Messenger Chat
-      });
-    };
-  </script>
-  <div class="fb-messenger" messenger="true" page_id="61575680084225" theme_color="#ff7f00" size="large"></div>
 
 </body>
 
